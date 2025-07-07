@@ -140,6 +140,8 @@ a:hover {
   font-size: 2rem;
 }
 
+
+
 .change-nav-link-color{
   color: blue;
 }
@@ -194,6 +196,10 @@ a:hover {
   }
 
   .humburger.hum-active{
+    display: block !important;
+  }
+
+  .mb-menu-close-btn.appear{
     display: block !important;
   }
 }

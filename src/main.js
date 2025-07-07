@@ -14,34 +14,44 @@ humburgerButton.addEventListener("click", (e) => {
   mobileMenu.classList.add("active");
   humburgerButton.style.display = "none";
   humburgerButton.classList.remove("hum-active");
-  closeButton.style.display = "block";
+  closeButton.classList.add("appear");
 });
 
 closeButton.addEventListener("click", (e) => {
   mobileMenu.classList.remove("active");
-  closeButton.style.display = "none";
+  closeButton.classList.remove("appear");
   humburgerButton.classList.add("hum-active");
 });
 
 // ACTIVE COLOR ON ACTIVE NAV LINKS
 
-const dektopMenu = document.querySelector('.desktop-menu')
+// FOR DESKTOP MENU
+const dektopMenu = document.querySelector(".desktop-menu");
+
+dektopMenu.addEventListener("click", (e) => {
+  if (e.target.classList == "nav-link") {
+    const allNavLinks = dektopMenu.querySelectorAll(".nav-link");
+
+    allNavLinks.forEach((currNavLink) => {
+      currNavLink.classList.remove("change-nav-link-color");
+    });
+
+    e.target.classList.add("change-nav-link-color");
+  }
+});
+
+// FOR MOBILE MENU
+
+mobileMenu.addEventListener("click", (e) => {
+  if (e.target.classList == "nav-link") {
+    const allNavLinks = mobileMenu.querySelectorAll(".nav-link");
+
+    allNavLinks.forEach((currNavLink) => {
+      currNavLink.classList.remove("change-nav-link-color");
+    });
+
+    e.target.classList.add("change-nav-link-color");
+  }
+});
 
 
-dektopMenu.addEventListener(('click'), (e) => {
-    
-    if(e.target.classList == 'nav-link'){
-    
-        const allNavLinks = dektopMenu.querySelectorAll('.nav-link');
-
-        allNavLinks.forEach((currNavLink) => {
-            currNavLink.classList.remove('change-nav-link-color');
-        })
-
-        e.target.classList.add('change-nav-link-color');
-        
-        
-    }
-
-    
-})
